@@ -1,0 +1,32 @@
+.postpage {
+  height: 100%;
+
+  &__container {
+    width: 80%;
+    margin: 10rem auto;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: $size-tablet) {
+  .postpage {
+    &__container {
+      width: 90%;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: $size-mobile) {
+  .postpage {
+    background-color: $color-white;
+
+    &__container {
+      width: 100%;
+      margin-top: 0;
+      padding-top: 5rem;
+      flex-direction: column;
+      background-color: $color-white;
+    }
+  }
+}

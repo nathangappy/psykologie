@@ -1,0 +1,164 @@
+.navigation {
+  padding: 3rem 10%;
+  background-color: $color-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-white;
+  position: relative;
+  z-index: 100;
+
+  &__logo-box {
+    border: 3px solid $color-white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    position: relative;
+    animation-name: logo;
+    animation-duration: 4s;
+    z-index: 1000;
+    letter-spacing: 1.7px;
+    font-size: 6.4rem;
+
+    h1 {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-white;
+      margin-left: 11rem;
+      font-size: 2.5rem;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 2px solid $color-secondary;
+    }
+
+    &:focus {
+      outline: none;
+      color: $color-secondary;
+      // border-bottom: 2px solid $color-secondary;
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@keyframes logo {
+  0% {
+    transform: rotatex(0deg);
+  }
+
+  50% {
+    transform: rotatey(360deg);
+  }
+
+  100% {
+    transform: rotatex(0deg);
+  }
+}
+
+@media screen and (max-width: $size-tablet) {
+  .navigation {
+    padding: 3rem 5%;
+
+    &__list {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      text-align: center;
+      transform: translate(-50%, -40%);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    &__link {
+      &:link,
+      &:visited {
+        margin: 4rem auto;
+        color: $color-white;
+        font-size: 4rem;
+        width: 50%;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid $color-secondary;
+        animation-name: links;
+        animation-duration: 3s;
+      }
+    }
+
+    &__mobile-menu {
+      border-radius: 10px;
+      // position: fixed;
+      // right: 5%;
+      height: 7rem;
+      width: 7rem;
+      background-color: $color-secondary;
+      border: none;
+      z-index: 1000;
+      visibility: visible;
+      display: inline-block;
+
+      &:focus {
+        outline: none;
+      }
+
+      img {
+        width: 60%;
+        height: 60%;
+      }
+    }
+
+    &__container {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      z-index: 200;
+    }
+
+    .mobile {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: $size-mobile) {
+  .navigation {
+    padding: 2rem;
+    display: flex;
+
+    &__logo-box {
+      font-size: 5rem;
+    }
+
+    &__mobile-menu {
+      right: 2rem;
+    }
+  }
+}
+
+@keyframes links {
+  0% {
+    opacity: 0;
+    // transform: translateX(-20rem);
+  }
+  100% {
+    opacity: 1;
+  }
+}

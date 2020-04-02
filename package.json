@@ -1,0 +1,23 @@
+{
+  "name": "psykologie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@tryghost/content-api": "^1.3.9",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+.blogsidebar {
+  width: 30%;
+  height: auto;
+  display: inline-block;
+  align-self: flex-start;
+  // padding: 1rem;
+  border-radius: 18px;
+  // border: 5px solid $color-primary;
+}
+
+@media screen and (max-width: $size-tablet) {
+  .blogsidebar {
+    margin-top: 4rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $size-mobile) {
+  .blogsidebar {
+    margin: 2rem 0;
+    background-color: $color-white;
+    padding: 1rem;
+    width: 100%;
+  }
+}

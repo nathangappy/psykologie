@@ -1,0 +1,37 @@
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/navigation') %>
+  <div class="contact">
+    <div class='contactus'>
+      <form class='contactus__form' method='POST' action='/submit-form'>
+        <h3 class='contactus__title'>Contact Us</h3>
+        <div class='contactus__box contactus__box--input'>
+          <input
+            type='text'
+            name='name'
+            class='contactus__input'
+            required
+          />
+          <label class='contactus__label'>Name</label>
+        </div>
+        <div class='contactus__box contactus__box--input'>
+          <input
+            type='email'
+            name='email'
+            class='contactus__input'
+            required
+          />
+          <label class='contactus__label'>Email</label>
+        </div>
+        <div class='contactus__box contactus__box--area'>
+          <textarea
+          name='message'
+          class='contactus__area'
+          required></textarea>
+          <label class='contactus__label'>Message</label>
+        </div>
+        <button class='contactus__button'>Send Message</button>
+      </form>
+    </div>
+  </div>
+  <%- include('../partials/footer') %>

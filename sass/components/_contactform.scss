@@ -1,0 +1,138 @@
+.contactus {
+  padding: 2rem;
+  width: 80%;
+  margin: 10rem auto;
+  background-color: $color-background;
+  color: $color-primary;
+
+  &__form {
+    width: 55%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+  }
+
+  &__box {
+    // display: inline-block;
+    margin-bottom: 4rem;
+
+    &--input {
+      width: 45%;
+      float: left;
+
+      &:first-of-type {
+        margin-right: 10%;
+      }
+    }
+
+    &--area {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    font-size: 2.5rem;
+    width: 100%;
+    border: none;
+    color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+      border-bottom: 4px solid $color-primary;
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+  }
+
+  &__area {
+    width: 100%;
+    font-size: 2rem;
+    border: none;
+    color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+    height: 20rem;
+    resize: none;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+      border-bottom: 4px solid $color-primary;
+    }
+  }
+
+  &__button {
+    transition: all 0.2s;
+    overflow: hidden;
+    background: $color-secondary;
+    color: $color-primary;
+    padding: 2.5rem 4.5rem;
+    font-size: 2.5rem;
+    display: inline-block;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: none;
+      border: 5px solid $color-primary;
+    }
+  }
+}
+
+@media screen and (max-width: $size-tablet) {
+  .contactus {
+    width: 90%;
+
+    &__form {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $size-mobile) {
+  .contactus {
+    width: 100%;
+    margin: 2rem 0;
+
+    &__title {
+      font-size: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    &__box {
+      margin-bottom: 3rem;
+
+      &--input {
+        width: 100%;
+      }
+    }
+
+    &__input {
+      font-size: 2.5rem;
+      border-radius: 0;
+    }
+
+    &__area {
+      height: 12rem;
+      border-radius: 0;
+    }
+
+    &__button {
+      font-size: 1.7rem;
+      margin-top: 2rem;
+      padding: 2rem 4rem;
+    }
+  }
+}

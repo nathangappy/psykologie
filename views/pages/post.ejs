@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/navigation') %>
+  <main class="postpage">
+    <div class="postpage__container">
+      <div class="blog">
+        <div class="blog__info">
+          <h1><%= post.title %></h1>
+          <p>By: <%=post.primary_author.name %></p>
+        </div>
+        <div class="blog__body" id="blog__body">
+          <%- post.html %>
+        </div>
+        <ul class="blog__tags">
+          <h4>Related Categories</h4>
+          <% post.tags.map(tag => { %>
+            <li><%= tag.name %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="blogsidebar">
+        <div class="subscribe">
+          <h4 class="subscribe__title">Train Your Brain!</h4>
+          <p class="subscribe__text">Get tips and business content straight to your inbox</p>
+          <form method='POST' action="/subscribe">
+            <input
+            type='email'
+            name='email'
+            class='subscribe__input'
+            placeholder='Enter Email'
+            pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
+            required
+            />
+            <button class="subscribe__button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%- include('../partials/footer') %>

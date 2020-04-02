@@ -1,0 +1,38 @@
+<%- include('../partials/head') %> 
+
+<body>
+  <%- include('../partials/navigation') %>
+  <main class="postspage">
+    <%- include('../partials/hero') %>
+    <div class="top-button">
+      <a href="#nav">&uarr;</a>
+    </div>
+    <div class="posts">
+      <div class="posts__list" id="posts">
+        <h2 class="posts__latest">Latest</h2>
+        <% posts.forEach((post) => { %>
+        <a href="/posts/<%= post.slug %>" class="post__link">
+          <div class="post" tabindex="0">
+            <img src="<%= post.feature_image %>" alt="<%= post.meta_title %>" class="post__image" />
+            <div class="post__info">
+              <h1 class="post__title"><%= post.title %></h1>
+              <!-- <p class="post__date"></p> -->
+              <ul class="post__tags">
+                <% post.tags.forEach(tag => { %>
+                <li><%= tag.name %></li>
+                <% }) %>
+              </ul>
+              <p class="post__summary"><%= post.excerpt %></p>
+            </div>
+          </div>
+        </a>
+        <% }); %>
+        </ul>
+      </div>
+      <div class="posts__featured">
+        <h2 class="posts__popular">Featued Posts</h2>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
