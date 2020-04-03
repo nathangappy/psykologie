@@ -1,19 +1,21 @@
 const fetch = require('node-fetch');
+const sgMail = require('@sendgrid/mail');
 
 const sendMessage = async (req) => {
-  try {
-    fetch('https://app.psykologieservers.com/contact', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: req.body.name,
-        email: req.body.email,
-        message: req.body.message
-      }),
-      headers: { 'Content-Type': 'application/json' }
-    })
-  } catch (error) {
-    console.log(error)
-  }
+  const { name, email, message } = req.body;
+  sgMail.setApiKey(process.env.SENDGRID_API);
+  const msg = {
+    to: 'team@psykologie.com',
+    subject: 'Psykologie site message',
+    from: 'team@psykologie.com',
+    text: message,
+    reply_to: {
+      email: email,
+      name: name
+    }
+  };
+  sgMail.send(msg);
+  res.send(200)
 }
 
 module.exports = sendMessage;
