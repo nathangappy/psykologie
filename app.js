@@ -49,6 +49,8 @@ app.post('/subscribe', async (req, res) => {
   res.render('pages/posts', {posts});
 });
 
+const PORT = process.env.PORT || 3000
+
 app.listen(3000, () => {
   console.log('Server is up on port 3000');
 });
