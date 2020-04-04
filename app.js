@@ -5,13 +5,11 @@ const express = require('express');
 const getPosts = require('./utils/getPosts');
 const getPost = require('./utils/getPost');
 const sendMessage = require('./utils/sendMessage');
-const forceHttps = require('./utils/forceHttps');
 const subscribe = require('./utils/subscribe');
 
 const app = express();
 
 app.use(express.static('public'));
-app.use(forceHttps)
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
