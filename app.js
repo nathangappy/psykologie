@@ -1,5 +1,7 @@
 // Core Dependencies
 const express = require('express');
+const favicon = require('serve-favicon');
+const path = require('path');
 
 // Utility FUnctions
 const getPosts = require('./utils/getPosts');
@@ -9,6 +11,7 @@ const subscribe = require('./utils/subscribe');
 
 const app = express();
 
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
